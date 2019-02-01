@@ -1,6 +1,7 @@
 import React from 'react';
 import Keyboard from 'react-simple-keyboard';
-import './App.css';
+// import './App.css';
+import {Popup, PopupInner, Close} from './StyledPopupKeyboard';
 
 class PopupKeyboard extends React.Component {
 
@@ -40,20 +41,20 @@ class PopupKeyboard extends React.Component {
 
     render() {
         return (
-            <div className='popup' draggable={false}>
-            <button className='close' onClick={this.props.closePopup}>X</button>
-            <div className='popup_inner'>
-            <Keyboard
-                ref={r => (this.keyboard = r)}
-                layoutName={this.state.layoutName}
-                layout={this.numLayout}
-                onChange={input => this.onChange(input)}
-                onKeyPress={button => this.onKeyPress(button)}
-                display={this.display}
-                useTouchEvents={false}
-            />
-            </div>
-        </div>
+            <Popup draggable={false}>
+            <Close  onClick={this.props.closePopup}>X</Close>
+            <PopupInner>
+                <Keyboard
+                    ref={r => (this.keyboard = r)}
+                    layoutName={this.state.layoutName}
+                    layout={this.numLayout}
+                    onChange={input => this.onChange(input)}
+                    onKeyPress={button => this.onKeyPress(button)}
+                    display={this.display}
+                    useTouchEvents={false}
+                />
+            </PopupInner>
+        </Popup>
         );
     }
 }

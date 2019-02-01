@@ -31,27 +31,6 @@
   }
 }
 
-.react-simple-keyboard {
-  width: 320px;
-  margin-top: 50px;
-}
-
-.hg-button.hg-standardBtn {
-  border-radius: 24px;
-}
-
 input {
   cursor: pointer;
-}
-
-.popup {
-  display: inline-block;
-  position: absolute;
-}
-
-.close {
-  padding: 16px;
-  position: absolute;
-  top:0;
-  left: 0;
 }
